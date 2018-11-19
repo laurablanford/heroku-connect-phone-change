@@ -27,9 +27,8 @@
                 var lastName = $("#lastName").val();
                 var email = $("#email").val();
                 var phone = $("#phone").val();
-                var postalCode = $("#postalCode").val();
 
-                if (firstName.length == 0 || lastName.length == 0 || email.length == 0 || phone.length == 0 || postalCode.length == 0) {
+                if (firstName.length == 0 || lastName.length == 0 || email.length == 0 || phone.length == 0) {
                     errorMessage.text("All of the fields are required.");
                     error.show();
                 }
@@ -41,8 +40,7 @@
                             firstName: firstName,
                             lastName: lastName,
                             email: email,
-                            phone: phone,
-                            postalCode: postalCode
+                            phone: phone
                         }),
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -51,8 +49,7 @@
                             $("#lastName").val("");
                             $("#email").val("");
                             $("#phone").val("");
-                            $("#postalCode").val("");
-                            $("#messageMessage").text("Record submitted!");
+                            $("#messageMessage").text("Record updated!");
                             $("#message").show();
                         },
                         error: function(err) {
@@ -79,7 +76,7 @@
         <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Welcome, VIP</h3>
+                    <h3 class="panel-title">Update Your Phone Number</h3>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
@@ -98,10 +95,6 @@
                         <label for="phone">Phone</label>
                         <input type="tel" class="form-control" id="phone" placeholder="New Phone Number" required>
                     </div>
-                    <div class="form-group">
-                        <label for="postalCode">Postal Code</label>
-                        <input type="text" class="form-control" id="postalCode" placeholder="ZIP/Postal Code" required>
-                    </div>
                 </div>
                 <div class="panel-footer">
                     <div id="message" class="alert alert-info" role="alert" style="display: none;">
@@ -113,7 +106,7 @@
                         <span class="sr-only">Error:</span>
                         <span id="errorMessage"></span>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update Phone Number</button>
                 </div>
             </div>
         </form>
