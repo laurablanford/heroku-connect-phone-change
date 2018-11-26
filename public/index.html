@@ -28,12 +28,14 @@
                 var email = $("#email").val();
                 var phone = $("#phone").val();
                 var postalCode = $("#postalCode").val();
-
+               
+                
                 if (firstName.length == 0 || lastName.length == 0 || email.length == 0 || phone.length == 0 || postalCode.length == 0) {
                     errorMessage.text("All of the fields are required.");
                     error.show();
                 }
                 else {
+                
                     $.ajax({
                         url: event.target.action,
                         method: event.target.method,
@@ -79,7 +81,7 @@
         <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Welcome, VIP</h3>
+                    <h3 class="panel-title">Join the team</h3>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
